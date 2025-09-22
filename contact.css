@@ -1,0 +1,107 @@
+:root{
+  --shirt: #c0c0c0;   /* لون القميص */
+  --pants: #000000;   /* لون البنطلون (خلفية أساسية) */
+  --accent: #222222;  /* تباين للنصوص فوق القميص */
+  --muted: #cfcfcf;
+}
+
+*{ margin:0;
+   padding:0;
+   box-sizing:border-box;
+   font-family: 'Poppins', sans-serif; 
+  }
+
+body{
+  background-image: url(../images/login.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #e9e9e9;
+  min-height:100vh;
+}
+
+/* Header */
+header{
+  width:100%;
+  padding:18px 28px;
+  display:flex;
+  align-items:center;
+  gap:30px;
+  background: rgba(0, 0, 0, 0.37);
+  backdrop-filter: blur(4px);
+}
+.Titel{ display:flex; align-items:center; gap:10px; color:var(--shirt); font-weight:700; font-size:18px; }
+.Titel i{ color:var(--shirt); font-size:20px; }
+
+/* Nav */
+nav ul.nav{ list-style:none; display:flex; gap:12px; margin-left:auto; }
+nav ul.nav li a{
+  color: rgba(255,255,255,0.75);
+  text-decoration:none;
+  padding:6px 10px;
+  border-radius:8px;
+  font-size:14px;
+}
+nav ul.nav li a:hover{ background: rgba(255,255,255,0.04); color: #fff; }
+
+/* Hero layout */
+.hero{
+  max-width:1100px;
+  margin:32px auto;
+  display:flex;
+  gap:28px;
+  align-items:flex-start;
+  padding:24px;
+}
+.hero-left{flex:1; min-width:300px}
+.hero-right{width:360px; min-width:240px}
+
+/* Headings */
+h1{font-size:30px;margin:6px 0 8px 0}
+h2{font-size:16px;color:white;margin-bottom:6px}
+.muted{color:white;font-size:14px}
+
+/* Form */
+.contact-form{margin-top:12px}
+.contact-form .row{display:flex;gap:12px;flex-wrap:wrap;}
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea{
+  width:100%;
+  background:rgba(255, 255, 255, 0.723);
+  border:1px solid rgba(255,255,255,0.04);
+  padding:12px 14px;
+  margin: 10px;
+  border-radius:10px;
+  color:black;
+  font-size:15px;
+  outline:none;
+  transition:0.18s;
+}
+.contact-form .row input{flex:1; min-width:180px}
+.contact-form input:focus,
+.contact-form textarea:focus{
+  transform:translateY(-2px);
+  border-color: rgba(110,168,254,0.3);
+  box-shadow:0 10px 30px rgba(0,0,0,0.5);
+}
+
+.site-footer{
+  position: fixed;       /* يبقى في الأسفل دائماً */
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.37); /* مناسب للثيم الداكن */
+  color: #cfcfcf;
+  font-size: 14px;
+  font-weight: 600;
+  backdrop-filter: blur(4px);
+  border-top: 1px solid rgba(255,255,255,0.03);
+  z-index: 100;
+  padding: 0 16px;
+  text-align: center;
+  box-shadow: 0 -6px 18px rgba(0,0,0,0.6);
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Login page</title>
+   <meta charset="UTF-8">
+   <link rel="stylesheet" href="css/login.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"/>
+</head>
+
+<body>
+  <header>
+    <div class="Titel">
+        <i class="fa-solid fa-id-card-clip"></i>
+        <strong>My<span>P</span>rofile</strong>
+    </div>
+    
+     <nav>
+      <ul class="nav">
+        <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><a href="cv.html"><i class="fa-regular fa-file-lines"></i> Resume</a></li>
+        <li><a href="contact.html"><i class="fa-regular fa-envelope"></i> Contact</a></li>
+        <li><a href="login.html"><i class="fa-solid fa-right-to-bracket"></i> Login</a></li>
+      </ul>
+     </nav>
+  </header>
+
+  <main>
+     <form method="post" onsubmit="return validateForm();">
+        <h1>Login</h1>
+        <input type="text" placeholder="User name" name="u-name" required>
+        <br>
+        <input type="password" placeholder="Password" name="u-pass" required>
+        <br>
+        <button type="submit">Login</button>
+        <p>Don't have account?<a href="#">Register</a></p>
+     </form>
+  </main>
+
+   <footer class="site-footer">
+    Copyright © 2025 ProFile | Designed By Eng. Abdul Latif | All rights reserved
+  </footer>
+
+  <script>
+    function validateForm() {
+      // الحصول على قيم حقول الإدخال
+      let userName = document.forms[0]["u-name"].value;
+      let userPass = document.forms[0]["u-pass"].value;
+
+      // التحقق من أن حقل اسم المستخدم ليس فارغًا
+      if (userName == "") {
+          alert("يجب إدخال اسم المستخدم.");
+          return false;
+      }
+      
+      // التحقق من أن حقل كلمة المرور ليس فارغًا
+      if (userPass == "") {
+          alert("يجب إدخال كلمة المرور.");
+          return false;
+      }
+      
+      // إذا كانت جميع الحقول صالحة، قم بإرسال النموذج
+      return true;
+    }
+  </script>
+</body>
+</html>

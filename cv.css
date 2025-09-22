@@ -1,0 +1,181 @@
+:root{
+  --shirt: #c0c0c0;
+  --accent: #222222;
+  --muted: #cfcfcf;
+  --card-red: rgba(255,20,20,0.95);
+  --card-radius: 12px;}
+
+*{ margin:0;
+   padding:0;
+   box-sizing:border-box;
+   font-family: 'Poppins', sans-serif;}
+
+body{
+  background-image: url(../images/login.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #e9e9e9;
+  min-height:100vh;}
+
+/* Header */
+header{
+  width:100%;
+  padding:18px 28px;
+  display:flex;
+  align-items:center;
+  gap:30px;
+  background: rgba(0, 0, 0, 0.37); 
+  backdrop-filter: blur(4px);
+  position: sticky;
+  top: 0;
+  z-index: 20;}
+.Titel{ 
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:var(--shirt);
+  font-weight:700; font-size:18px;}
+.Titel i{ 
+  color:var(--shirt);
+   font-size:20px; }
+
+/* Nav */
+nav ul.nav{ 
+  list-style:none;
+  display:flex; 
+  gap:12px; 
+  margin-left:auto; }
+nav ul.nav li a{
+  color: rgba(255,255,255,0.85);
+  text-decoration:none;
+  padding:6px 10px;
+  border-radius:8px;
+  font-size:14px;}
+nav ul.nav li a:hover{ 
+  background: rgba(255,255,255,0.04);
+   color: #fff; }
+
+
+   
+/* Container */
+.container {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: 36px 18px 120px;
+  box-sizing: border-box;
+}
+
+/* ===== Grid layout (instead of flex) ===== */
+.cv-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr 320px;
+  gap: 28px;
+  align-items: start;
+}
+
+/* Cards */
+.card{
+  background: #0000004c;
+  padding: 22px;
+  border: 1px solid rgba(0,0,0,0.25);
+  color: #fff;
+  overflow: hidden;
+  transform: translateZ(0);
+}
+
+/* profile image sizing */
+.profile img{
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 6px solid rgba(0,0,0,0.12);
+  /* For center img */
+  display:block;
+  margin-inline:auto;}
+
+/* headings and muted helper */
+h2,h3,h4{ 
+   margin:8px 0;
+     color:gray;
+       /* replace :#0f172a;  */}
+.muted{ 
+  color: var(--muted); 
+  font-size:0.95rem; }
+
+/* JOB lists nicer */
+.card ul { 
+  margin-left: 1rem;
+  margin-top: 8px;
+ line-height: 1.6; }
+ 
+.card .job + .job { margin-top: 18px; }
+
+/* ===== Animations ===== */
+@keyframes slideLeftIn {
+  from { transform: translateX(-36px); opacity: 0; }
+  to   { transform: translateX(0); opacity: 1; }
+}
+@keyframes slideRightIn {
+  from { transform: translateX(36px); opacity: 0; }
+  to   { transform: translateX(0); opacity: 1; }
+}
+@keyframes fadeUpIn {
+  from { transform: translateY(18px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+
+/* apply animations with small stagger */
+.slide-left {
+  animation: slideLeftIn 600ms cubic-bezier(.2,.9,.2,1) both;
+  animation-delay: 120ms;
+}
+.fade-up {
+  animation: fadeUpIn 700ms cubic-bezier(.2,.9,.2,1) both;
+  animation-delay: 260ms;
+}
+.slide-right {
+  animation: slideRightIn 600ms cubic-bezier(.2,.9,.2,1) both;
+  animation-delay: 360ms;
+}
+
+/* Respect user's reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .slide-left, .slide-right, .fade-up {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Responsive: switch to single column on small screens */
+@media (max-width: 980px) {
+  .cv-layout {
+    grid-template-columns: 1fr;
+  }
+  .profile, .middle, .right { width: auto; margin-bottom: 14px; }
+  .profile img[alt="Profile photo"]{ width: 160px; height: 160px; }
+  .container { padding-bottom: 140px; }
+}
+
+/* Footer styling */
+.site-footer{
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.37);
+  color: #cfcfcf;
+  font-size: 14px;
+  font-weight: 600;
+  backdrop-filter: blur(4px);
+  border-top: 1px solid rgba(255,255,255,0.03);
+  z-index: 100;
+  padding: 0 16px;
+  text-align: center;
+  box-shadow: 0 -6px 18px rgba(0,0,0,0.6);
+}
